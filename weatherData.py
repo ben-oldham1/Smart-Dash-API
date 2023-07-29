@@ -3,9 +3,12 @@ from turtle import title
 from flask import jsonify
 import requests
 
+# Import the credentials.py file, containing API keys, etc
+import credentials
+
 def getWeatherData():
     # Retrieve the required parameters from the request
-    apiKey = 'cadbd0ffe610d790aa93e83718ef070d'
+    apiKey = credentials.weatherAPIkey
     city = 'bristol'
     country = 'UK'
 
