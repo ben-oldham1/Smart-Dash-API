@@ -30,7 +30,7 @@ def internetSpeed():
     try:
         speedData, records = getInternetSpeed()
     except:
-        print('Error retriving bus data')
+        print('Error retriving speed data')
         return Response(status=500)
     
     print('request processed')
