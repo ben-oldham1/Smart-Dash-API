@@ -3,9 +3,10 @@ from flask import Flask, Response, jsonify
 import requests
 import time
 
-from busData import getBusData
-from internetSpeed import getInternetSpeed
-from weatherData import getWeatherData
+from data_gathering.busData import getBusData
+from data_gathering.internetSpeed import getInternetSpeed
+from data_gathering.weatherData import getWeatherData
+from data_gathering.newsData import getNewsData
 
 api = Flask(__name__)
 
@@ -45,6 +46,13 @@ def get_weather():
     except:
         return Response(status=500)
 
+@api.route('/news', methods=['GET'])
+def get_news():
+    try:
+        newsData = getNewsData()
+        return jsonify(newsData), 200
+    except:
+        return Response(status=500)
 
  
 if __name__ == '__main__':
