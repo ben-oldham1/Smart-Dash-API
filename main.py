@@ -5,8 +5,9 @@ import time
 
 from data_gathering.busData import getBusData
 from data_gathering.internetSpeed import getInternetSpeed
-from data_gathering.weatherData import getWeatherData
+from data_gathering.weatherData import getWeatherData, getSunCycleData
 from data_gathering.newsData import getNewsData
+from data_gathering.dailySpacePic import getDailySpacePic
 
 api = Flask(__name__)
 
@@ -27,7 +28,6 @@ def busData(stopname):
 # Internet speed test
 @api.route('/speedtest', methods=['GET'])
 def internetSpeed():
-
     try:
         speedData, records = getInternetSpeed()
     except:
@@ -46,11 +46,28 @@ def get_weather():
     except:
         return Response(status=500)
 
+@api.route('/suncycle', methods=['GET'])
+def get_suncycle():
+    try:
+        SunCycleData = getSunCycleData()
+
+        return jsonify(SunCycleData), 200
+    except:
+        return Response(status=500)
+
 @api.route('/news', methods=['GET'])
 def get_news():
     try:
         newsData = getNewsData()
         return jsonify(newsData), 200
+    except:
+        return Response(status=500)
+
+@api.route('/dailyspacepic', methods=['GET'])
+def get_dailyspacepic():
+    try:
+        dailySpacePic = getDailySpacePic()
+        return jsonify(dailySpacePic), 200
     except:
         return Response(status=500)
 
