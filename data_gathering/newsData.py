@@ -5,13 +5,11 @@ import credentials
 from data_gathering.busData import getBusData
 
 def getNewsData():
-    # Retrieve the required parameters from the request
+    # Retrieve the required parameters for the request
     apiKey = credentials.newsAPIkey
-
-    # Set some parameters for the API request
-    language = 'en'
-    country = 'gb'
-    numArticles = '5'
+    language = credentials.newsLanguage
+    country = credentials.newsCountry
+    numArticles = credentials.newsNumArticles
 
     # Make a request to the NewsData.io API
     apiUrl = f"https://newsdata.io/api/1/news?apikey={apiKey}&language={language}&size={numArticles}&country={country}"
