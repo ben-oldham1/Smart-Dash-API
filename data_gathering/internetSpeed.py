@@ -4,7 +4,7 @@ import json
 import datetime
 
 # Load existing data from the JSON file
-def load_data_from_json(file_path):
+def loadDataFromJSON(file_path):
     try:
         with open(file_path, 'r') as file:
             data = json.load(file)
@@ -13,7 +13,7 @@ def load_data_from_json(file_path):
         return []
 
 # Save data to the JSON file
-def save_data_to_json(file_path, data):
+def saveDataToJSON(file_path, data):
     with open(file_path, 'w') as file:
         json.dump(data, file, indent=4)
 
@@ -34,7 +34,7 @@ def getInternetSpeed():
     json_file_path = "internetSpeedData.json"
 
     # Load existing data from the JSON file
-    records = load_data_from_json(json_file_path)
+    records = loadDataFromJSON(json_file_path)
 
     # Calculate current internet speed
     current_time = datetime.datetime.now().strftime("%H:%M")
@@ -51,7 +51,7 @@ def getInternetSpeed():
     records = records[-8:]
 
     # Save updated data to the JSON file
-    save_data_to_json(json_file_path, records)
+    saveDataToJSON(json_file_path, records)
 
 
     return result, records
