@@ -1,11 +1,11 @@
 <div align="center">
-  <img alt="Logo" src="public/logo512.png" width="100" />
+  <img alt="Logo" src="https://github.com/ben-oldham1/Smart-Dash-Frontend/blob/cb40692ebebf2619e1dab22bc70e268fec19ff87/public/logo512.png" width="100" />
 </div>
 <h1 align="center">
   Smart Dashboard (backend)
 </h1>
 <p align="center">
-The backend for my smart dashboard project. It provides an API for the <a href="https://github.com/ben-oldham1/Smart-Dash-API">frontend</a> to call. 
+The backend for my smart dashboard project. It provides an API for the <a href="https://github.com/ben-oldham1/Smart-Dash-Frontend">frontend</a> to call. 
 </p>
 <p  align="center">
 <img  src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
