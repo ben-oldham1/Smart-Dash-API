@@ -2,3 +2,6 @@
 /__pycache__
 credentials.py
 busData.py
+data_gathering/__pycache__/
+.DS_Store
+internetSpeedData.json
