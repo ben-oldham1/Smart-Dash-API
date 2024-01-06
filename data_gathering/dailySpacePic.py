@@ -1,10 +1,13 @@
 import requests
 
+# Import the credentials.py file, containing API keys, etc
+import credentials
+
 # Call the NASA API
 def getDailySpacePic():
 
     # Make a request to the NASA daily space pic API
-    apiUrl = f"https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2023-10-12"
+    apiUrl = f"https://api.nasa.gov/planetary/apod?api_key={credentials.nasaSpaceAPIkey}"
     response = requests.get(apiUrl)
     data = response.json()
 
